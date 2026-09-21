@@ -1,0 +1,65 @@
+# Cópia para Render Free. Use o tutorial principal para criação manual.
+services:
+  - type: web
+    name: ifj-central
+    runtime: node
+    plan: free
+    numInstances: 1
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 22
+      - key: APP_ORIGIN
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: INITIAL_ADMIN_USERNAME
+        sync: false
+      - key: INITIAL_ADMIN_PASSWORD
+        sync: false
+      - key: BOT_ENABLED
+        value: "true"
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: DIV_1_NAME
+        value: Primeira divisão
+      - key: DIV_1_GUILD_ID
+        sync: false
+      - key: DIV_1_MEMBER_ROLE_ID
+        sync: false
+      - key: DIV_1_ADMIN_ROLE_ID
+        sync: false
+      - key: DIV_1_VERIFICATION_CHANNEL_ID
+        sync: false
+      - key: DIV_1_WANTED_CHANNEL_ID
+        sync: false
+      - key: DIV_1_TICKETS_CHANNEL_ID
+        sync: false
+      - key: DIV_1_REPORTS_CHANNEL_ID
+        sync: false
+      - key: DIV_1_TICKET_CATEGORY_ID
+        sync: false
+      - key: DIV_2_NAME
+        value: Segunda divisão
+      - key: DIV_2_GUILD_ID
+        sync: false
+      - key: DIV_2_MEMBER_ROLE_ID
+        sync: false
+      - key: DIV_2_ADMIN_ROLE_ID
+        sync: false
+      - key: DIV_2_VERIFICATION_CHANNEL_ID
+        sync: false
+      - key: DIV_2_WANTED_CHANNEL_ID
+        sync: false
+      - key: DIV_2_TICKETS_CHANNEL_ID
+        sync: false
+      - key: DIV_2_REPORTS_CHANNEL_ID
+        sync: false
+      - key: DIV_2_TICKET_CATEGORY_ID
+        sync: false
